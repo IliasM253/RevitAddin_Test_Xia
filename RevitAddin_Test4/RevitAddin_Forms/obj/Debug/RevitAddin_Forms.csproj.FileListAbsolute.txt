@@ -1,0 +1,9 @@
+C:\Users\imitr\Desktop\RevitAddin_Test4\RevitAddin_Forms\bin\Debug\RevitAddin_Forms.exe.config
+C:\Users\imitr\Desktop\RevitAddin_Test4\RevitAddin_Forms\bin\Debug\RevitAddin_Forms.exe
+C:\Users\imitr\Desktop\RevitAddin_Test4\RevitAddin_Forms\bin\Debug\RevitAddin_Forms.pdb
+C:\Users\imitr\Desktop\RevitAddin_Test4\RevitAddin_Forms\obj\Debug\RevitAddin_Forms.csprojAssemblyReference.cache
+C:\Users\imitr\Desktop\RevitAddin_Test4\RevitAddin_Forms\obj\Debug\RevitAddin_Forms.Properties.Resources.resources
+C:\Users\imitr\Desktop\RevitAddin_Test4\RevitAddin_Forms\obj\Debug\RevitAddin_Forms.csproj.GenerateResource.cache
+C:\Users\imitr\Desktop\RevitAddin_Test4\RevitAddin_Forms\obj\Debug\RevitAddin_Forms.csproj.CoreCompileInputs.cache
+C:\Users\imitr\Desktop\RevitAddin_Test4\RevitAddin_Forms\obj\Debug\RevitAddin_Forms.exe
+C:\Users\imitr\Desktop\RevitAddin_Test4\RevitAddin_Forms\obj\Debug\RevitAddin_Forms.pdb

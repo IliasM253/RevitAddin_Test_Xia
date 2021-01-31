@@ -1,0 +1,507 @@
+﻿<Window x:Class="IIB1_UE1_Gruppe05_AbgabeCP.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        
+        xmlns:local="clr-namespace:IIB1_UE1_Gruppe05_AbgabeCP"
+        mc:Ignorable="d"
+        Title="Flächennutzungsmanagement-Tool" Height="750" Width="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+
+        <GroupBox Header="Benutzer" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="5" Margin="0.2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <GroupBox Header="Admin" Grid.Row="0"  Grid.Column="0" Grid.ColumnSpan="6" IsEnabled="False">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Content="Administrator-Key" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                        </Label>
+                        <TextBox Name="textboxeingabeadminpw" Grid.Column="1" Grid.ColumnSpan="2" Margin="5">
+
+                        </TextBox>
+                        <Button Grid.Column="3" Content="Bestätigen" Name="buttonadminpw" Margin="5">
+
+                        </Button>
+                    </Grid>
+                </GroupBox>
+
+                <GroupBox Header="Mieter" Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="6">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Content="Mieter" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                        </Label>
+                        <ComboBox Name="comboboxmieter" Grid.Column="1" Grid.Row="0" Margin="10" Grid.ColumnSpan="2" SelectionChanged="Comboboxmieter_SelectionChanged">
+                        </ComboBox>
+                        <Button Grid.Column="3" Grid.Row="0" Content="neue/r Mieter/in" Name="buttonneumieter" Margin="5,10,5,10" Click="Buttonneumieter_Click" >
+
+                        </Button>
+                        <Button Grid.Column="3" Content="Einloggen" Name="buttonmieter" Grid.Row="2" Margin="5,10,5,10" Click="Buttonmieter_Click">
+
+                        </Button>
+                    </Grid>
+                </GroupBox>
+            </Grid>
+        </GroupBox>
+
+        <TabControl HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="2">
+            <TabItem Name="tabgebauede" Header="Gebäude" IsEnabled="False" >
+                <Grid Name="gridgebauede" IsEnabled="False">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="5"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="5"/>
+                    </Grid.RowDefinitions>
+
+
+                    <GroupBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5" Grid.RowSpan="2" >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="8*"/>
+                                <ColumnDefinition Width="87*"/>
+                                <ColumnDefinition Width="95*"/>
+                                <ColumnDefinition Width="95*"/>
+                                <ColumnDefinition Width="95*"/>
+                                <ColumnDefinition Width="94*"/>
+                                <ColumnDefinition Width="95*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Label Content="Gebäude auswählen" Grid.Column="0" Grid.ColumnSpan="5" VerticalAlignment="Bottom" Margin="0,0,94.8,0.2"></Label>
+                            <ComboBox Name="comboboxgebaeude" Grid.Column="0" Grid.Row="1" Margin="0,2.8,9.6,3.4" Grid.ColumnSpan="4" SelectionChanged="comboboxgebaeude_SelectionChanged">
+                                <ComboBoxItem>
+
+                                </ComboBoxItem>
+                            </ComboBox>
+                            <Button Name="buttonneugebaeude" Content="Neu" Grid.Row="2" Grid.Column="0" Grid.RowSpan="1" Margin="0,0.6,0.2,0.4" IsEnabled="False" Click="Buttonneugebaeude_Click" Grid.ColumnSpan="2" >
+
+                            </Button>
+                            <!--
+                            <Button Name="buttonladengebaeude" Content="Laden" Grid.Row="2" Grid.Column="2" Grid.RowSpan="1" Margin="0.8,0.6,0.4,0.4" IsEnabled="False">
+
+                            </Button>
+                            -->
+                            <Label Content="Status" Grid.Column="4" Grid.ColumnSpan="3" VerticalAlignment="Bottom" Margin="0.4,0,0.4,0.2"></Label>
+                            <TextBox Name="textboxausgabespeichernladengebaeude" Grid.Column="4" Grid.ColumnSpan="3" Grid.RowSpan="4" Margin="0.4,31,-0.6,30.6"/>
+
+                            <Label Content="Stockwerk auswählen" Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="3" VerticalAlignment="Bottom" Margin="0,0,94.8,31.6" Grid.RowSpan="2"></Label>
+                            <ComboBox Name="comboboxstockwerk" Grid.Column="0" Grid.Row="4" Margin="0,3.4,9.6,2.6" Grid.ColumnSpan="4" SelectionChanged="comboboxstockwerk_SelectionChanged">
+                                <ComboBoxItem>
+
+                                </ComboBoxItem>
+                            </ComboBox>
+                            <Button Name="buttonneustockwerk" Content="Neu" Grid.Row="5" Grid.Column="0" Margin="0,0.4,0.2,-0.2" IsEnabled="False" Click="Buttonneustockwerk_Click" Grid.ColumnSpan="2"/>
+                            <Button IsEnabled="False" Name="buttonneuraum" Content="Raum hinzufügen" Grid.Row="5" Grid.Column="2" Margin="0.8,0.4,0.4,-0.2" Click="Buttonneuraum_Click"/>
+                            <Label Content="Status" Grid.Column="4" Grid.ColumnSpan="3" Grid.Row="3" VerticalAlignment="Bottom" Margin="0.4,0,0.4,31.6" Grid.RowSpan="2"></Label>
+                            <TextBox Name="textboxausgabespeichernstockwerk" Grid.Row="4" Grid.Column="4" Grid.ColumnSpan="3" Grid.RowSpan="2" Margin="0.4,0.4,-0.6,-1.2"></TextBox>
+
+                        </Grid>
+
+                    </GroupBox>
+
+
+                    <GroupBox Header="Raum" Grid.Row="3" Grid.Column="1" Grid.RowSpan="2"  Grid.ColumnSpan="5" Margin="0.2,0,0.2,0.4">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="30"/>
+                            </Grid.RowDefinitions>
+
+                            <!--
+                            <Label Content="Raum auswählen" Grid.Column="0" Grid.ColumnSpan="3" VerticalAlignment="Bottom"></Label>
+                            
+                            <ComboBox Name="comboboxraum" Grid.Column="0" Grid.Row="1" Margin="5" Grid.ColumnSpan="3">
+                                <ComboBoxItem>
+
+                                </ComboBoxItem>
+                            </ComboBox>
+
+                            <Button Name="buttonrefreshraum" Content="Refresh" Grid.Row="2" Grid.Column="0" Margin="10" Grid.RowSpan="1" Click="Buttonrefreshraum_Click" />
+
+                            <Button Name="buttonmietenraum" Content="Mieten" Grid.Row="2" Grid.Column="1" Margin="10" Grid.RowSpan="1" Click="Buttonmietenraum_Click">
+
+                            </Button>
+                            <Label Content="Status" Grid.Column="3" Grid.ColumnSpan="3" VerticalAlignment="Bottom"></Label>
+                            -->
+                            <TextBox Name="textboxausgaberaum" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="3" Grid.RowSpan="4" Margin="5"></TextBox>
+
+
+
+                            <ListView x:Name="LVraeume"  HorizontalAlignment="Left" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="0" Grid.RowSpan="4" Margin="5"  MouseDoubleClick="ListView_DoubleClick_Event" SelectionChanged="LVraeume_SelectionChanged" >
+
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn Header="Nr." Width="30" DisplayMemberBinding="{Binding Id}"/>
+                                        <GridViewColumn Header="Typ" x:Name="LVRtyp" Width="50" DisplayMemberBinding="{Binding Typ}" />
+                                        <GridViewColumn Header="Nutzung" Width="100" DisplayMemberBinding="{Binding Nutzungsart}"/>
+                                        <GridViewColumn Header="Fläche" Width="70" DisplayMemberBinding="{Binding Flaeche}"/>
+                                        <GridViewColumn Header="Mietzustand" Width="150" DisplayMemberBinding="{Binding Mietzustand}"/>
+
+                                    </GridView>
+                                </ListView.View>
+
+                            </ListView>
+                            <Label Content="Auf Raum doppelklicken um zu mieten" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="4"></Label>
+
+                        </Grid>
+                    </GroupBox>
+
+                </Grid>
+            </TabItem>
+
+            <TabItem Name ="tabraeume" Header="Räume" IsEnabled="False" Margin="-1,0,-3,0" Height="22" VerticalAlignment="Top">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5"/>
+                        <ColumnDefinition Width="9*"/>
+                        <ColumnDefinition Width="55*"/>
+                        <ColumnDefinition Width="5"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="5"/>
+                    </Grid.RowDefinitions>
+
+                    <GroupBox Grid.Row="1" Grid.ColumnSpan="2" Margin="0,5" Grid.Column="1">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <ComboBox Name="comboboxlistraum1" Grid.Column="2" Grid.Row="1" Margin="5,10,5,5" Grid.ColumnSpan="3" SelectionChanged="Comboboxlistraum1_SelectionChanged">
+                                <ComboBoxItem>
+                                </ComboBoxItem>
+                            </ComboBox>
+
+                            <Label Content="Gemietete Räume:" Grid.Column="0" Grid.ColumnSpan="1" VerticalAlignment="Center"></Label>
+
+                        </Grid>
+                    </GroupBox>
+
+                    <GroupBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="5"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <Label Content="Id" VerticalAlignment="Center" Grid.Row="1"></Label>
+                            <Label Content="Typ" VerticalAlignment="Center" Grid.Row="2"></Label>
+                            <Label Content="Nutzungsart" VerticalAlignment="Center" Grid.Row="3"></Label>
+                            <Label Content="Bezeichnung" VerticalAlignment="Center" Grid.Row="4"></Label>
+                            <Label Content="Fläche" VerticalAlignment="Center" Grid.Row="5"></Label>
+                            <Label Content="Anz. Sitzplätze" VerticalAlignment="Center" Grid.Row="6"></Label>
+
+                            <TextBox x:Name="raumid" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Margin="5" IsEnabled="False"></TextBox>
+                            <TextBox x:Name="raumtexttyp" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="1" Margin="5" IsEnabled="False"></TextBox>
+                            <TextBox x:Name="raumtextnutzungsart" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="1" Margin="5" IsEnabled="False"></TextBox>
+                            <TextBox x:Name="raumbez" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" Margin="5"></TextBox>
+                            <TextBox x:Name="raumflaeche" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2" Margin="5" IsEnabled="False"></TextBox>
+                            <TextBox x:Name="raumsitzplaetze" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="2" Margin="5"></TextBox>
+
+                            <ComboBox x:Name="raumtyp" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="1" Margin="5" SelectionChanged="Raumtyp_SelectionChanged">
+                                <ComboBoxItem Content="NUF 1"/>
+                                <ComboBoxItem Content="NUF 2"/>
+                                <ComboBoxItem Content="NUF 3"/>
+                                <ComboBoxItem Content="NUF 4"/>
+                                <ComboBoxItem Content="NUF 5"/>
+                                <ComboBoxItem Content="NUF 6"/>
+                                <ComboBoxItem Content="NUF 7"/>
+                                <ComboBoxItem Content="NUF 7 (SF)"/>
+                            </ComboBox>
+                            <ComboBox x:Name="raumnutzungsart" Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="1" Margin="5" IsEnabled="False"></ComboBox>
+
+                            <Button x:Name="raumupdate" Content="update" Grid.Column="2" Grid.Row="7" Margin="5" Click="Raumupdate_Click" RenderTransformOrigin="0.501,0.506"></Button>
+
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+
+            <TabItem Name ="tabmobiliar" Header="Mobiliar" IsEnabled="False"  Height="22" VerticalAlignment="Top">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5"/>
+                        <ColumnDefinition Width="136*"/>
+                        <ColumnDefinition Width="447*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="80"/>
+                    </Grid.RowDefinitions>
+
+                    <GroupBox Header="Räume"  Grid.Row="1" Grid.ColumnSpan="2" Margin="0.2,5.2,5,4.8" Grid.Column="1">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <ComboBox Name="comboboxlistraum" Grid.Column="2" Grid.Row="1" Margin="10,10,10,10" Grid.ColumnSpan="3" SelectionChanged="Comboboxlistraum_SelectionChanged">
+                                <ComboBoxItem>
+                                </ComboBoxItem>
+                            </ComboBox>
+
+                            <Label Content="Gemietete Räume:" Grid.Column="0" Grid.ColumnSpan="1" VerticalAlignment="Center"></Label>
+
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="Mobiliar" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="3" Margin="0.2,0.2,0,0" >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="130"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="50"/>
+                            </Grid.RowDefinitions>
+
+                            <ListView x:Name="listviewmobiliar" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="2" Margin="5" SelectionChanged="Listviewmobiliar_SelectionChanged" >
+                                <ListView.View>
+                                    <GridView>
+
+                                        <GridViewColumn Header="Id" Width="50" DisplayMemberBinding="{Binding Id}"></GridViewColumn>
+                                        <GridViewColumn Header="Bezeichnung" Width="175" DisplayMemberBinding="{Binding Bez}"></GridViewColumn>
+                                        <GridViewColumn Header="Typ" Width="100" DisplayMemberBinding="{Binding Typ}" ></GridViewColumn>
+                                        <GridViewColumn Header="Anzahl" Width="50" DisplayMemberBinding="{Binding Anzahl}" ></GridViewColumn>
+                                        <GridViewColumn Header="Akt. Wert" Width="60" DisplayMemberBinding="{Binding AktuellerWert}" ></GridViewColumn>
+                                        <GridViewColumn Header="Zustand" Width="90" DisplayMemberBinding="{Binding Zustand}" ></GridViewColumn>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                            <GroupBox Grid.Column="0" Grid.Row="2" Grid.RowSpan="3" Grid.ColumnSpan="2" Margin="0">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="5"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Label Content="Typ" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center"></Label>
+                                    <Label Content="Bezeichnung" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center"></Label>
+                                    <Label Content="Anzahl" Grid.Column="0" Grid.Row="3" VerticalAlignment="Center"></Label>
+                                    <Label Content="Kaufpreis" Grid.Column="0" Grid.Row="4" VerticalAlignment="Center"></Label>
+                                    <Label Content="Zustand" Grid.Column="0" Grid.Row="5" VerticalAlignment="Center"></Label>
+
+                                    <ComboBox x:Name="Mobiliartyp" Grid.Column="2" Grid.Row="1" Margin="0,5" IsEnabled="False" >
+                                        <ComboBoxItem Content="Stuhl"/>
+                                        <ComboBoxItem Content="Tisch"/>
+                                        <ComboBoxItem Content="Konferenztisch"/>
+                                    </ComboBox>
+
+                                    <TextBox x:Name="mobiliartextTyp" Grid.Column="1" Grid.Row="1" Margin="0,5,5,5" IsEnabled="False"></TextBox>
+                                    <TextBox x:Name="mobiliarBez" Grid.Column="1" Grid.Row="2" Margin="0,5" Grid.ColumnSpan="2" IsEnabled="False"></TextBox>
+                                    <TextBox x:Name="mobiliarAnz" Grid.Column="1" Grid.Row="3" Margin="0,5" Grid.ColumnSpan="2" IsEnabled="False"></TextBox>
+                                    <TextBox x:Name="mobiliarWert" Grid.Column="1" Grid.Row="4" Margin="0,5" Grid.ColumnSpan="2" IsEnabled="False"></TextBox>
+                                    <TextBox x:Name="mobiliartextzustand" Grid.Column="1" Grid.Row="5" Margin="0,5,5,5" IsEnabled="False"></TextBox>
+
+                                    <ComboBox x:Name="Mobiliarzustand" Grid.Column="2" Grid.Row="5" Margin="0,5" IsEnabled="False">
+                                        <ComboBoxItem Content="intakt"/>
+                                        <ComboBoxItem Content="beschädigt"/>
+                                        <ComboBoxItem Content="defekt"/>
+                                    </ComboBox>
+
+
+
+                                </Grid>
+                            </GroupBox>
+                            <Button Name="buttonmobiliar" Content="Neue Mobiliar" Grid.Row="3" Grid.Column="2" Margin="5" Grid.RowSpan="1" Click="Buttonneuemobiliar_Click">
+
+                            </Button>
+                            <Button Name="buttonmobiliarupdate" Content="Mobiliar update" Grid.Row="4" Grid.Column="2" Margin="5" Grid.RowSpan="1" Click="Buttonmobiliar_Click">
+
+                            </Button>
+
+
+
+                        </Grid>
+                    </GroupBox>
+
+                </Grid>
+            </TabItem>
+
+            <TabItem Name="tabbilanz" Header="Bilanz" Height="22" VerticalAlignment="Top" IsEnabled="False">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="5"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="5"/>
+                    </Grid.RowDefinitions>
+
+                    <GroupBox Header="Bilanz" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2"  Grid.RowSpan="4">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <ListView x:Name="LVbilanz" IsEnabled="True" HorizontalAlignment="Left" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" Grid.RowSpan="5" Margin="5" Width="550">
+
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn Header="Nr." Width="30" DisplayMemberBinding="{Binding Id}"/>
+                                        <GridViewColumn Header="Nutzung" Width="100" DisplayMemberBinding="{Binding Nutzungsart}"/>
+                                        <GridViewColumn Header="Fläche" Width="100" DisplayMemberBinding="{Binding Flaeche}"/>
+                                        <GridViewColumn Header="Mietkosten (Fläche)" Width="100" DisplayMemberBinding="{Binding Flaechenpreis}"/>
+                                        <GridViewColumn Header="Mietkosten (Möbel)" Width="100" DisplayMemberBinding="{Binding Gesamtmoebelpreis}"/>
+                                        <GridViewColumn Header="Mietpreis" Width="100" DisplayMemberBinding="{Binding Gesamtmiete}"/>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+
+
+                            <Button Name="btBilanzRefresh" Content="Refresh" Grid.Row="6" Grid.Column="0" Margin="7" Width="70" HorizontalAlignment="Left" Click="BtBilanzRefresh_Click"/>
+
+                            <!--
+                            <Button Name="btGesamtPreis" Content="Ges. Miete" Grid.Row="6" Grid.Column="0" Width="70" HorizontalAlignment="Left" Margin="80,0,0,0"/>
+                            -->
+
+                            <Label x:Name="lGesamtmiete" Content="#######" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold"/>
+
+
+                        </Grid>
+
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+        <GroupBox Header="Gesamtes Projekt speichern" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" Margin="0.2,0.2,0,0.2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Button Name="btSpeichern" Content="Speichern" Width="100" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="0" Margin="10" Click="Buttonspeichern_Click" />
+                <Button Name="btLaden" Content="Laden" Width="100" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1" Margin="10" Click="Buttonladen_Click" />
+
+
+                <TextBox Name="tbSpeichern" Grid.Row="0" Grid.Column="2" Margin="7" />
+            </Grid>
+        </GroupBox>
+
+
+    </Grid>
+</Window>

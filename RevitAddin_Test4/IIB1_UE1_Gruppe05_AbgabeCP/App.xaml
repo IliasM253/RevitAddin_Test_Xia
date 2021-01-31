@@ -1,0 +1,9 @@
+﻿<Application x:Class="IIB1_UE1_Gruppe05_AbgabeCP.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:IIB1_UE1_Gruppe05_AbgabeCP"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>
